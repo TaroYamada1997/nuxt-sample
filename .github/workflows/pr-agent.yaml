@@ -1,0 +1,36 @@
+name: pr-agent
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+  issue_comment:
+    types: [created, edited]
+
+permissions:
+  pull-requests: write
+  issues: write
+
+jobs:
+  pr_agent:
+    runs-on: ubuntu-latest
+    name: Run PR Agent
+    if: ${{ github.event.sender.type != 'Bot' }}
+    steps:
+      - id: pr-agent
+        uses: Codium-ai/pr-agent@main
+        env:
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTION.AUTO_IMPROVE: true
+          PR_DESCRIPTION.EXTRA_INSTRUCTIONS: 'Please use Japanese in descriptions.'
+          pr_reviewer.extra_instructions: >-
+            日本語で回答してください。
+            以下の原則に従ってコメントしてください。
+            URLなどの構造化テキストを文字列結合で作ってはいけない。
+            console.log()等のデバッグコードを残してはいけない。
+          PR_CODE_SUGGESTIONS.EXTRA_INSTRUCTIONS: >-
+            日本語で回答してください。
+            以下の原則に従ってコメントしてください。
+            URLなどの構造化テキストを文字列結合で作ってはいけない。
+            console.log()等のデバッグコードを残してはいけない。
+          PR_ADD_DOCS.EXTRA_INSTRUCTIONS: 'Please use Japanese in descriptions.'
