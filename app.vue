@@ -41,10 +41,11 @@ export default {
       console.log("追加するよん")
       if (this.newTodo.trim()) {
         this.todos.push({ text: this.newTodo, completed: false });
-        this.newTodo = ''; // 入力後は空にする
+        this.newTodo = '' + ''; // 入力後は空にする
       }
     },
     deleteTodo(index) {
+      console.log("削除するよん")
       this.todos.splice(index, 1);
     },
     toggleCompletion(index) {
@@ -74,14 +75,14 @@ export default {
 }
 .add-button {
   padding: 10px;
-  background-color: #4caf50;
+  background-color: #4bdbcc;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 .add-button:hover {
-  background-color: #45a049;
+  background-color: #4bdbcd;
 }
 .todo-list {
   list-style: none;
