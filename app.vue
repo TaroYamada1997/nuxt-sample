@@ -1,13 +1,15 @@
 <template>
   <div class="container">
     <h1>TODOアプリ</h1>
-    <input
-      v-model="newTodo"
-      @keyup.enter="addTodo"
-      type="text"
-      placeholder="新しいTODOを追加"
-      class="todo-input"
-    />
+    <div class="todo-input-container">
+      <input
+        v-model="newTodo"
+        type="text"
+        placeholder="新しいTODOを追加"
+        class="todo-input"
+      />
+      <button @click="addTodo" class="add-button">追加</button>
+    </div>
     <ul class="todo-list">
       <li
         v-for="(todo, index) in todos"
@@ -36,9 +38,10 @@ export default {
   },
   methods: {
     addTodo() {
+      console.log("追加するよん")
       if (this.newTodo.trim()) {
         this.todos.push({ text: this.newTodo, completed: false });
-        this.newTodo = '';
+        this.newTodo = ''; // 入力後は空にする
       }
     },
     deleteTodo(index) {
@@ -59,12 +62,26 @@ export default {
   padding: 20px;
   font-family: Arial, sans-serif;
 }
+.todo-input-container {
+  display: flex;
+  gap: 10px;
+}
 .todo-input {
   width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
   border-radius: 5px;
   border: 1px solid #ccc;
+}
+.add-button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.add-button:hover {
+  background-color: #45a049;
 }
 .todo-list {
   list-style: none;
