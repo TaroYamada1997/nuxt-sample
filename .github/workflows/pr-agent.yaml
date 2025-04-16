@@ -22,18 +22,18 @@ jobs:
           OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_ACTION.AUTO_IMPROVE: true
-          PR_DESCRIPTION.EXTRA_INSTRUCTIONS: 'Please use Japanese in descriptions.'
-          pr_reviewer.extra_instructions: >-
+          PR_DESCRIPTION.EXTRA_INSTRUCTIONS: "Please use Japanese in descriptions."
+          PR_REVIEWER.EXTRA_INSTRUCTIONS: >-
             日本語で回答してください。
             以下の原則に従ってコメントしてください。
-            URLなどの構造化テキストを文字列結合で作ってはいけない。
             console.log()等のデバッグコードを残してはいけない。
+            文字列にはシングルクォートを使用しなければならない。
           PR_CODE_SUGGESTIONS.EXTRA_INSTRUCTIONS: >-
             日本語で回答してください。
             以下の原則に従ってコメントしてください。
-            URLなどの構造化テキストを文字列結合で作ってはいけない。
             console.log()等のデバッグコードを残してはいけない。
-          PR_ADD_DOCS.EXTRA_INSTRUCTIONS: 'Please use Japanese in descriptions.'
-          pr_code_suggestions.commitable_code_suggestions: true
-          pr_code_suggestions.num_code_suggestions: 10
-          pr_code_suggestions.num_code_suggestions_per_chunk: 10
+            文字列にはシングルクォートを使用しなければならない。
+          PR_ADD_DOCS.EXTRA_INSTRUCTIONS: "PLEASE USE JAPANESE IN DESCRIPTIONS."
+          PR_CODE_SUGGESTIONS.COMMITABLE_CODE_SUGGESTIONS: TRUE
+          PR_CODE_SUGGESTIONS.NUM_CODE_SUGGESTIONS: 10
+          PR_CODE_SUGGESTIONS.NUM_CODE_SUGGESTIONS_PER_CHUNK: 10
