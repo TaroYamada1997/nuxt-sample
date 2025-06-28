@@ -31,12 +31,11 @@ jobs:
           PR_REVIEWER.EXTRA_INSTRUCTIONS: >-
             日本語で回答してください。
             以下の原則に従ってコメントしてください。
-            URLなどの構造化テキストを文字列結合で作ってはいけない。
             console.log()等のデバッグコードを残してはいけない。
+            文字列にはシングルクォートを使用しなければならない。
           PR_CODE_SUGGESTIONS.EXTRA_INSTRUCTIONS: >-
             日本語で回答してください。
             以下の原則に従ってコメントしてください。
-            URLなどの構造化テキストを文字列結合で作ってはいけない。
             console.log()等のデバッグコードを残してはいけない。
           PR_ADD_DOCS.EXTRA_INSTRUCTIONS: "日本語で説明してください。"
           PR_CODE_SUGGESTIONS.COMMITABLE_CODE_SUGGESTIONS: TRUE
