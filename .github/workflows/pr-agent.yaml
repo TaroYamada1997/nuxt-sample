@@ -19,10 +19,15 @@ jobs:
       - id: pr-agent
         uses: Codium-ai/pr-agent@main
         env:
-          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+          CONFIG.MODEL: "bedrock/anthropic.claude-3-5-sonnet-20241022-v2:0"
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: "ap-northeast-1"
+
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_ACTION.AUTO_IMPROVE: true
-          PR_DESCRIPTION.EXTRA_INSTRUCTIONS: "Please use Japanese in descriptions."
+
+          PR_DESCRIPTION.EXTRA_INSTRUCTIONS: "日本語で説明してください。"
           PR_REVIEWER.EXTRA_INSTRUCTIONS: >-
             日本語で回答してください。
             以下の原則に従ってコメントしてください。
@@ -33,7 +38,7 @@ jobs:
             以下の原則に従ってコメントしてください。
             URLなどの構造化テキストを文字列結合で作ってはいけない。
             console.log()等のデバッグコードを残してはいけない。
-          PR_ADD_DOCS.EXTRA_INSTRUCTIONS: "PLEASE USE JAPANESE IN DESCRIPTIONS."
+          PR_ADD_DOCS.EXTRA_INSTRUCTIONS: "日本語で説明してください。"
           PR_CODE_SUGGESTIONS.COMMITABLE_CODE_SUGGESTIONS: TRUE
           PR_CODE_SUGGESTIONS.NUM_CODE_SUGGESTIONS: 10
           PR_CODE_SUGGESTIONS.NUM_CODE_SUGGESTIONS_PER_CHUNK: 10
