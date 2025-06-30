@@ -24,7 +24,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_ACTION.AUTO_IMPROVE: true
 
-          PR_DESCRIPTION.EXTRA_INSTRUCTIONS: "日本語で説明してください。"
+          PR_DESCRIPTION.EXTRA_INSTRUCTIONS: "日本語で説明してください"
           PR_REVIEWER.EXTRA_INSTRUCTIONS: >-
             日本語で回答してください。
             以下の原則に従ってコメントしてください。
@@ -34,7 +34,7 @@ jobs:
             日本語で回答してください。
             以下の原則に従ってコメントしてください。
             console.log()等のデバッグコードを残してはいけない。
-          PR_ADD_DOCS.EXTRA_INSTRUCTIONS: "日本語で説明してください。"
+          PR_ADD_DOCS.EXTRA_INSTRUCTIONS: "日本語で説明してください"
           PR_CODE_SUGGESTIONS.COMMITABLE_CODE_SUGGESTIONS: TRUE
           PR_CODE_SUGGESTIONS.NUM_CODE_SUGGESTIONS: 10
           PR_CODE_SUGGESTIONS.NUM_CODE_SUGGESTIONS_PER_CHUNK: 10
